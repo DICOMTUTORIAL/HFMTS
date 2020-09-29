@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DICOM Tutorial</title>
+    <link>https://dicomtutorial.github.io/HFMTS/</link>
+    <description>Recent content on DICOM Tutorial</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 23 Aug 2020 20:11:52 +0200</lastBuildDate>
+    
+	<atom:link href="https://dicomtutorial.github.io/HFMTS/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Was ist DICOM</title>
+      <link>https://dicomtutorial.github.io/HFMTS/1/8/</link>
+      <pubDate>Sun, 23 Aug 2020 20:11:52 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/1/8/</guid>
+      <description>DICOM steht für Digital Imaging and Communication in Medicine. In Deutsch heisst das, digitale Bildgebung und Kommunikation in Medizin. DICOM ist ein offener und weltweit anerkannter Standard für die medizinische Bildgebung. Er wurde entwickelt von der ACR und der NEMA zu Beginn der 80er Jahre und ist bis heute noch im Einsatz. Aktuell ist der Standard in der dritten Fassung veröffentlicht.
+Der Zweck der Entwicklung war eine Vereinheitlichung der Bildformate von medizinisch bildgebenden Systemen.</description>
+    </item>
+    
+    <item>
+      <title>Serviceklassen</title>
+      <link>https://dicomtutorial.github.io/HFMTS/7/12/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:24 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/7/12/</guid>
+      <description>DICOM Serviceklassen Die Netzwerkdienste1 in DICOM werden als Serviceklassen2 bezeichnet. Diese setzen sich immer aus zwei Teilen zusammen. Zum einen gibt es die Netzwerkbefehle oder Kommandos welch als DIMSE3 bezeichnet werden. Zum anderen werden mit Befehlen Daten übermittelt. Dies geschieht mit den IODs4.
+Der DICOM Standard5 definiert eine ganze Reihe von Serviceklassen. In diesem Tutorial beschäftigen wir uns jedoch nicht mit einer grossen Anzahl davon. Doch wir werden grundlegende und bewährte Serviceklassen aus dem Alltag bildgebender Medizin betrachten.</description>
+    </item>
+    
+    <item>
+      <title>Query/Retrieve</title>
+      <link>https://dicomtutorial.github.io/HFMTS/7/15/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:15 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/7/15/</guid>
+      <description>Query Bei einem Query wird ein C-FIND DIMSE verwendet, welches die Suchattribute im dazugehörigen IOD enthält. Nach diesen Suchattributen wird auf dem SCP ein Datenabgleich ausgeführt. Füre jede Übereinstimmung sendet der C-FIND SCP die Antworten an den C-FIND SCU zurück.
+Somit dient der Query Befehl auch als Kontrolle, ob die gesuchten Daten auf einem Archiv als SCP vorhanden sind. Erst nach Bestätigung vom SCP zum SCU ist es möglich die Daten anzufordern und zu speichern.</description>
+    </item>
+    
+    <item>
+      <title>RPi Konfiguration</title>
+      <link>https://dicomtutorial.github.io/HFMTS/5/4/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:15 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/5/4/</guid>
+      <description>Als DICOM Server wird in diesem Tutorial die Software Orthanc dienen. Diese wird auf dem Raspberry Pi installiert, sowie auch auf dem PC. Orthanc kann als Server und als Modalität1 konfiguriert werden. Auf dem RPi wird sie als Server genutzt und auf dem PC als simulierte Modalität.
+ Installation RPi:
+  Nach Verbindung via SSH2 wird folgender Befehl eingegeben.
+sudo apt-get install orthanc   Nach erfolgreicher Installation wechseln wir das Verzeichnis, um zur Konfigurations Datei des DICOM Servers zu gelangen.</description>
+    </item>
+    
+    <item>
+      <title>Store</title>
+      <link>https://dicomtutorial.github.io/HFMTS/7/14/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:15 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/7/14/</guid>
+      <description>Dieser Dienst wird zur Speicherung von DICOM Bildern verwendet. Er zählt zu den grundlegenden Eigenschaften des DICOM Netzwerkdienstes und kommt dementspechend auch häufig zum Einsatz. Nach jeder abgeschlossenden Studie eines Patienten werden die Bilder mit dem DIMSE C-Store an ein Archiv versendet. Zur Speicherung in einer Datenbank/Langzeitarchiv. Die Workstations speichern die abgerufenen Bilder auch ab, jedoch werden diese mit einem andern DIMSE Befehl angefordert. Der Store Netzwerkdienst kann als züsätlicher Teil in anderen Serviceklassen enthalten sein.</description>
+    </item>
+    
+    <item>
+      <title>Verification</title>
+      <link>https://dicomtutorial.github.io/HFMTS/7/13/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:15 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/7/13/</guid>
+      <description>Die Verification Class dient der überprüfung einer DICOM Konnektivität zwischen 2 DICOM Knoten. Es wird als SCU und SCP eingesetzt. Der Verlauf beginnt mit einer C-ECHO-RQ Message vom SCU zum SCP, der wiederum mit einer C-ECHO-RSP antwortet. Damit wird sichergestellt, das diese Verbindung zwischen den DICOM Knoten richtig konfiguriert ist.
+Die Verification Class lässt sich wie folgt ausführen:
+PC  Nach der Wahl der DICOM Servers. Wird mit der Taste Test ECHO das C-ECHO SCU ausgeführt.</description>
+    </item>
+    
+    <item>
+      <title>DICOM Toolkit</title>
+      <link>https://dicomtutorial.github.io/HFMTS/3/7/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:05 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/3/7/</guid>
+      <description>MIt dem Toolkit lassen sich die DICOM Daten direkt in der commando console des RPi bearbeiten. So kann mit dcmdump eine DICOM Datei gelesen werden oder dcmcjpeg zur Datenkomprimierung eingesetzt werden. Es gibt eine ganze Reihe solcher Tools.
+In diesem Kapitel werden Beispiele für die Anwendung solcher Befehle gezeigt.
+Die Commandos in der RPi Console dieses Tutorials verwenden das DCMTK Toolkit.
+Dieses ist im Installationspacket von Orthanc mit dabei, kann aber auch für weitere Betriebssysteme bezogen werden unter dem Link oben.</description>
+    </item>
+    
+    <item>
+      <title>DICOM Bilder</title>
+      <link>https://dicomtutorial.github.io/HFMTS/5/2/</link>
+      <pubDate>Sun, 23 Aug 2020 18:41:57 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/5/2/</guid>
+      <description>DICOM Bilder Es werden verschiedene Bilddatenbanken und Beispielbilder im Internet angeboten. Unter folgenden Links findet man verschiedenste Bilder in unterschiedlicher Qualität.
+  http://www.visus.com/en/download/free-dicom-viewer/download-page.html Tutorial https://medimodel.com/sample-dicom-files/ https://www.rubomedical.com/dicom_files/ https://www.insight-journal.org/midas/collection/view/194 Früchte &amp;amp; Gemüse https://medistim.com/dicom/ https://boxdicom.com/samples.html Grosse Sammlung   Die DICOM BIlder werden benötigt für dieses Tutorial. Sie sind die Daten welche von DICOM kodiert werden und in bytes durch das Netzwerk transferiert werden. Es gibt verschiedene bildgebende Verfahren. Daher unterscheiden sich auch die erzeugten Bilder der jeweiligen Verfahren.</description>
+    </item>
+    
+    <item>
+      <title>DICOM Viewer</title>
+      <link>https://dicomtutorial.github.io/HFMTS/5/3/</link>
+      <pubDate>Sun, 23 Aug 2020 18:41:51 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/5/3/</guid>
+      <description>Anzeige Damit sich Bilder im DICOM Format anzeigen lassen, werden DICOM Viewer vorausgesetzt. Mit diesen lassen sich nebst dem betrachten der Bilder, auch viele verschiedene Veränderungen am Bild vornehemen. Dieses Kapitel wird mit dem Programm DICOM Sante PACS behandelt, welches über einen übersichtlichen Viewer verfügt. Er bietet zudem auch einen Hexa Viewer an, mit welchem sich die einzelnen Teile eines DICOM Datenstroms aufgezeigen lassen. Der DICOM Sante PACS Server wird in einem anderen Kapitel behandelt.</description>
+    </item>
+    
+    <item>
+      <title>Vorbereitung</title>
+      <link>https://dicomtutorial.github.io/HFMTS/5/1/</link>
+      <pubDate>Sun, 23 Aug 2020 18:41:51 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/5/1/</guid>
+      <description>Überblick In diesem Tutorial wird auf einem Raspberry Pi 4 ein DICOM Server installiert &amp;amp; konfiguriert. Dazu wird auch gezeigt, wie eine Modalität angebunden wird.
+Wir verbinden uns von einem PC auf den RPi via SSH Verbindung. In diesem Fall wurde Putty verwendet.
+Der Server im Mini-PACS ist der RPi. Die Workstation und die Modalität wird mit dem PC ausgeführt. Die Workstation kann Bilder zur Betrachtung und Bearbeitung. Die Modalität wird mit dem PC simuliert.</description>
+    </item>
+    
+    <item>
+      <title>Associations</title>
+      <link>https://dicomtutorial.github.io/HFMTS/3/6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/3/6/</guid>
+      <description>Die DICOM Association Regeln definieren die Low Level Protokolle der DICOM Netz-werk Konnektivität. Die zuvor behandelten DIMSE Protokolle sind High Level und bauen auf dem Low Level Protokoll auf. Das Ziel der DICOM Association Protokolle besteht darin, sicherzustellen das zwei kommunizierende DICOM Anwendungen (AE) kompati-bel sind zueinander und die Daten in einem definierten Format und einer geordneten Reihenfolge übertragen werden. Zur Sicherstellung dieses Ziels werden die DICOM Associations verwendet.
+Die DICOM Associations sind ein erweiterter Netzwerkmechanismus in TCP/IP Vernet-zungen, welcher zur Übertragung von DICOM spezifischen Nachrichten ausgelegt ist.</description>
+    </item>
+    
+    <item>
+      <title>Bildgebende Verfahren</title>
+      <link>https://dicomtutorial.github.io/HFMTS/1/9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/1/9/</guid>
+      <description>Zitat von Wikipedia unter dem Suchbegriff; Bildgebendes Verfahren.
+&amp;ldquo;Ein bildgebendes Verfahren erzeugt aus Messgrößen eines realen Objektes ein Abbild, wobei die Messgröße oder eine daraus abgeleitete Information ortsaufgelöst und über Helligkeitswerte oder Farben kodiert visualisiert wird.&amp;rdquo;
+Unter dem Begriff versteht man eine Zusammenfassung von verschiedenen apparativen Untersuchungsmethoden in der medizinischen Diagnostik. Die wichtigsten Verfahren sind röntgen und -nukleardiagnostik, Endoskopie, Ultraschall, Magnetresonanz, Computertomographie.
+Sie werden hauptsächlich bei krankheitsbedingten Veränderungen im Körper eingesetzt und liefern damit wertvolle Informationen sowohl 2-Dimensional als auch 3-Dimensional zur Diagnose.</description>
+    </item>
+    
+    <item>
+      <title>Datenstruktur</title>
+      <link>https://dicomtutorial.github.io/HFMTS/1/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/1/11/</guid>
+      <description>DICOM Datenformat DICOM Datenstruktur Die Datenstruktur in DICOM ist hierarchisch aufgebaut.
+Bildquelle
+Sie beginnt mit dem Patienten als Wurzel, welcher eine beliebige Anzahl Studien haben kann. In jeder Studie können mehrere Bilder/Instanzen von unterschiedlichen Modalitäten enthalten sein.
+Bildquelle
+ Bildquelle
+Data Dictionary Das DICOM Daten Wörterbuch ist im Wesentlichen ein Register aller in der Medizin verwendeten Standarddatenelemente, also Attribute. Diese Elemente oder Items, werden in die 28 VRs formatiert.
+Damit sie in einer Liste mit über 2000 verschiedenen Elementen zuordnungsbar sind, werden sämtliche Elemente in nummerierte Gruppen unterteilt, basierend auf Ähnlichkeiten in Bezug auf deren Inhalt.</description>
+    </item>
+    
+    <item>
+      <title>Netzwerkkommunikation</title>
+      <link>https://dicomtutorial.github.io/HFMTS/3/5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/3/5/</guid>
+      <description>Netzwerkkommunikation Der DICOM Standard hat die Netzwerkkommunikation bereits vor der Entstehung von Computernetzwerken definiert. Heute verwendet DICOM das TCP/IP Protokoll. DICOM nutzt dabei die grundlegende Netzwerkfunktion des Sendens von Informationen. Die Informationen werden als Sequenz von Bytes im Netzwerk mittels Portes/IP Adresse transferiert. Im Netzwerk Applikation Layer fügt DICOM jedoch eine eigene Netzwerksprache hinzu. Diese besteht aus „High level Services“, mit welchen DIMSE gemeint ist, die auf dem DICOM Upper Layer aufbauen.</description>
+    </item>
+    
+    <item>
+      <title>PACS</title>
+      <link>https://dicomtutorial.github.io/HFMTS/1/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/1/10/</guid>
+      <description>PACS Der Begriff steht für Picture Archiving and Communication System, was Bildarchivie-rungs- und Kommunikationssystem bedeutet. Wie der Name schon sagt, handelt es sich hierbei um die Archivierung und Kommunikation von Bilddaten. Damit dies überhaupt möglich ist, wird eine einheitliche Kommunikation benötigt. Diesen Bereich regelt eben-falls DICOM.
+Jedes PACS heutzutage ist auf DICOM aufgebaut um die Interoperabilität zwischen ver-schiedenen Herstellern von Geräten und Software (Server, Viewer) zu gewährleisten. DICOM ist auch massgebend am Erfolg, und demzufolge am Wachstum von PACS-Systemen beteiligt.</description>
+    </item>
+    
+  </channel>
+</rss>
