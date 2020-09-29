@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>Query/ retrieve | DICOM Tutorial</title>
+  <meta charset='utf-8'>
+  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <meta http-equiv = 'X-UA-Compatible' content = 'IE=edge'>
+<meta property = 'og:locale' content = 'en_US' />
+<meta property="og:type" content="article">
+<meta property = 'og:title' content = 'Query/Retrieve' />
+<meta name="description" content="Query Bei einem Query wird ein C-FIND DIMSE verwendet, welches die Suchattribute im dazugehörigen IOD enthält. Nach diesen Suchattributen wird auf dem SCP ein …">
+<meta property = 'og:description' content = 'Query Bei einem Query wird ein C-FIND DIMSE verwendet, welches die Suchattribute im dazugehörigen IOD enthält. Nach diesen Suchattributen wird auf dem SCP ein …'>
+<meta property = 'og:url' content = 'https://dicomtutorial.github.io/HFMTS/7/15/' />
+<meta property = 'og:image' content = 'https://dicomtutorial.github.io/HFMTS/images/qr.jpg'/>
+<meta name = 'twitter:card' content = 'summary_large_image' />
+<meta name = 'twitter:creator' content = ''>
+<meta name = 'twitter:title' content = 'Query/Retrieve' />
+<meta property = 'twitter:description'  content = 'Query Bei einem Query wird ein C-FIND DIMSE verwendet, welches die Suchattribute im dazugehörigen IOD enthält. Nach diesen Suchattributen wird auf dem SCP ein …'/>
+<meta name = 'twitter:image' content = 'https://dicomtutorial.github.io/HFMTS/images/qr.jpg' />
+<link rel='apple-touch-icon' sizes='180x180' href='https://dicomtutorial.github.io/HFMTS/images/icons/apple-touch-icon.png'>
+<link rel='icon' type='image/png' sizes='32x32' href='https://dicomtutorial.github.io/HFMTS/images/icons/favicon-32x32.png'>
+<link rel='icon' type='image/png' sizes='16x16' href='https://dicomtutorial.github.io/HFMTS/images/icons/favicon-16x16.png'>
+<link rel='manifest' href='https://dicomtutorial.github.io/HFMTS/images/icons/site.webmanifest'>
+
+  <link rel='canonical' href='https://dicomtutorial.github.io/HFMTS/7/15/'>
+  <link rel = 'stylesheet' href = 'https://dicomtutorial.github.io/HFMTS/css/styles.7b162d036dd76ef4726c6c03a3294e879884501dfb317af089dfa8c8e903e38015760e7fd3305ff65be5c2166235408630ded1089d647962764c42094cf15835.css' integrity = 'sha512-exYtA23XbvRybGwDoylOh5iEUB37MXrwid&#43;oyOkD44AVdg5/0zBf9lvlwhZiNUCGMN7RCJ1keWJ2TEIJTPFYNQ=='>
+</head>
+
+  <body><div class = 'nav-drop'>
+  <div class = 'nav-body'>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'>Tutorial</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/1/' class = 'nav_item'>Einführung</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/3/' class = 'nav_item'>DICOM Netzwerk</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/5/' class = 'nav_item'>Vorbereitung</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/7/' class = 'nav_item'>Serviceklassen</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+    <div class = 'nav-close'></div>
+  </div>
+</div><header class = 'nav' >
+  <nav class = 'nav-menu'>
+    <a href='https://dicomtutorial.github.io/HFMTS/' class = 'nav-brand nav_item'>DICOM Tutorial</a>
+    <div class = 'nav_bar-wrap'>
+      <div class = 'nav_bar'></div>
+    </div>
+  </nav>
+</header>
+
+
+    <main>
+<section class = 'post_header' style = 'background-image:url(https://dicomtutorial.github.io/HFMTS/images/qr.jpg);'>
+  <h1 class='post_title'>Query/Retrieve</h1>
+</section>
+<div class = 'post'>
+  <article class='post_content'><h3 id="query">Query</h3>
+<p>Bei einem Query wird ein C-FIND DIMSE verwendet, welches die Suchattribute im dazugehörigen IOD enthält. Nach diesen Suchattributen wird auf dem SCP ein Datenabgleich ausgeführt. Füre jede Übereinstimmung sendet der C-FIND SCP die Antworten an den C-FIND SCU zurück.</p>
+<p>Somit dient der Query Befehl auch als Kontrolle, ob die gesuchten Daten auf einem Archiv als SCP vorhanden sind. Erst nach Bestätigung vom SCP zum SCU ist es möglich die Daten anzufordern und zu speichern.</p>
+<p>Dieses Prinzip wird von den meisten DICOM Softwaren verfolgt. In unseren beiden PACS Servern, Orthanc und Sante PACS werden die Abfragen nach dem gleichen Schema gemacht.</p>
+<h3 id="retrieve">Retrieve</h3>
+<p>Beim Retrieve geht es um das anfordern der zuvor abgefragten DICOM Daten. Hierzu sind 2 verschiedene Wege möglich. Zum einen wird C-GET und zum anderen C-MOVE verwendet. Beide Retrieve Kommandos verwenden zur Abfrage C-FIND.</p>
+<p>Der Unterschied zwischen C-MOVE und C-GET:</p>
+<p><strong>C-GET</strong>
+Bei C-GET ist das Abrufen der Daten lediglich mit demselben C-FIND SCU möglich.</p>
+<p><strong>C-MOVE</strong>
+Mit C-MOVE hingegen ist es möglich, die Daten an eine beliebige AE zu senden.</p>
+<blockquote>
+<p>Hier gilt es zu erwähnen das C-MOVE wesentlich mehr Möglichkeiten im 
+Austausch von Daten übers Netzwerk bietet. Damit sind jedoch meist 
+Komplikationen verbunden, auch heute noch. Da mehrere AEs beteiligt
+sind, muss sichergestellt sein, dass auf jeder AE die nötigen DICOM
+Parameter richtig kofiguriert sind. AET, IP-Adresse und Port Nummer.</p>
+</blockquote>
+<hr>
+<p>In diesem Tutorial wird das Ausführen von C-MOVE und C-GET nicht mit allen AEs möglich sein. Der Gründe können verschieden sein. Zum einen kann es an den Firewall
+einstellungen liegen oder einfach deshalb, weil wir nicht die Vollversion des Sante PACS Server haben.</p>
+<p>Daher wird C-MOVE lediglich im Orthanc Explorer gezeigt, welcher bei Query/Retrieve
+eingesetzt wird.</p>
+<p>C-GET hingegen ist das einfachere Beispiel fürs Verständniss und kann besser aufgezeigt werden im Tutorial. Es genügt auch um die Query/Retrieve Service 
+Klasse zu behandeln.</p>
+<hr>
+<h1 id="tutorial">Tutorial</h1>
+<h3 id="c-get">C-GET</h3>
+<p>Dieses Kommando lässt sich am besten mit dem Sante PACS Server aufzeigen.</p>
+<ol>
+<li>Als erstes wird der AET und das Retrieve Protocol ausgewählt</li>
+<li>Bevor wir mit C-FIND abfragen, führen wir ein C-ECHO aus</li>
+<li>Nach erfolgreichem C-ECHO wählen wir <code>search all</code></li>
+<li>Nachdem eine Studie ausgewählt ist kann mit <code>Get Study</code> die Datei abgerufen werden.</li>
+</ol>
+<p><img src="https://preview.redd.it/1nucuo1si6n51.png?width=3000&amp;format=png&amp;auto=webp&amp;s=be4566a499e14ec738828f59b15b8106f45b148b" alt=""></p>
+<p>Nach erfolgreichem Verlauf erscheint das Bild direkt im Viewer.</p>
+<p><img src="https://preview.redd.it/ytmykre9j6n51.png?width=3000&amp;format=png&amp;auto=webp&amp;s=5bcf1a0bf4990936a6a00e448f4c80b2e7026c79" alt=""></p>
+<blockquote>
+<p>Der Network Report funktioniert für diesen Befehl leider nicht. Der Befehl wird
+zwar ausgeführt, erscheint im Networtk Report des SCU jedoch als failed. Ein Teil
+wird erfasst und kann nachgeschaut werden.</p>
+</blockquote>
+<hr>
+<h3 id="c-move">C-MOVE</h3>
+<p>Der C-MOVE Befehl ist Teil des Query/Retrieve Fensters im Orthanc Explorer.</p>
+<ol>
+<li>Das Feld <code>Query/Retrieve</code> auswählen.
+<img src="https://preview.redd.it/808p3h2vm6n51.png?width=2974&amp;format=png&amp;auto=webp&amp;s=0683b1f488d28a397e001ecbc7d5534cb0efe002" alt=""></li>
+<li>Nach der Auswahl des AET.</li>
+<li>Kann mit <code>Search Studies</code> das C-FIND Kommando gestartet werden.
+<img src="https://preview.redd.it/3e66u5myo6n51.png?width=2998&amp;format=png&amp;auto=webp&amp;s=49d99cf9d59e8cde20b70f85376b04b8d37adcb9" alt=""></li>
+<li>Die übereinstimmenden Daten werden angezeigt. Wenn man den Kreis anklickt.
+<img src="https://preview.redd.it/s7h9wu1zo6n51.png?width=3000&amp;format=png&amp;auto=webp&amp;s=12f51731e4861e94bbdd80b049521dc653c4e5fd" alt=""></li>
+<li>Gelangt man zum Fenster zum Abrufen der Daten mit der <code>Retrieve</code> Taste.
+<img src="https://preview.redd.it/kazherjzo6n51.png?width=3000&amp;format=png&amp;auto=webp&amp;s=57bbce7310c0e7c528f61e7179b97eec6714d131" alt=""></li>
+</ol>
+<hr>
+<h3 id="konzept">Konzept</h3>
+<p><strong>Query</strong></p>
+<p>DICOM unterteilt alle C-Find-Datensuchen in drei Datenebenen: Patient, Studie und Patientenstudie. Diese Ebenen werden als Roots bezeichnet. Die Suche nach Bilddaten ist nicht modalitätsspezifisch und verfügt daher nicht über so viele SOPs wie in C-STORE.</p>
+<p>In C-FIND sind 3 verschiedene SOPs für die jeweiligen Suchebenen definiert. Die Notwendigkeit verschiedener Query Roots ergibt sich aus der DICOM Datenhierarchie, Patient-Studie-Serie-Bild.</p>
+<p>In DICOM sind die Daten in vier Hierarchieebenen organisiert. Damit kann man bei der Abfrage einen Bereich eingrenzen. Beispielsweise verläuft eine C-FIND Abfrage mit Patient Root Query/Retrieve SOP so, dass sie der Patient-Study-Series-Image Hierarchie folgt. Anderseits würde sich bei einer C-FIND Study Root Query/Retrieve SOP die Abfrage nur auf die 3 Study-Series-Image Ebenen beschränken.</p>
+<p>Der Radiologische Workflow ist mehrheitlich studienorientiert. Die Struktur der Service Klasse bleibt auch in der C-FIND SOP erhalten. Das DIMSE Objekt (DICOM Be-fehlsobjekt,0000) übermittelt die C-FIND Nachrichtenparameter. Die IOD (Datenobjekt) enthält die Suchkriterien für den Abgleich mit dem SCP.</p>
+<p><strong>C-FIND</strong></p>
+<p><img src="https://i.redd.it/nbe8k3mfdyp51.png" alt=""></p>
+<hr>
+<p><strong>Retrieve</strong></p>
+<p>Das Abrufen von DICOM Bildern erfolgt durch das C-GET  SOP. Die DIMSE C-GET kombiniert die beiden Befehle C-FIND und C-STORE zu einer Serviceklasse, in welcher die Daten mit C-FIND identifiziert werden, gefolgt von C-STORE.</p>
+<p>Wenn die Suchanfrage an den C-GET SCP gesendet wird, verwendet der SCP zuerst die Suchparameter des C-FIND SCU um die Daten ausfindig zu machen und verwendet anschliessend den C-STORE Befehl als SCU um diese an den C-GET SCU zurückzusenden, wobei dieser die Rolle des C-STORE SCP einnimmt.</p>
+<p>In diesem Beispiel wird ersichtlich das der C-GET SCU (Workstation) auch als C-STORE SCP dienen muss, um die angeforderten Bilder überhaupt akzeptieren zu können. Dies geschieht für jedes einzelne Bild. Während der Übertragung sendet der C-GET SCP Antworten mit dem Status dazu. Wenn alle Speicheroperationen ausgeführt wurden, antwortet der C-GET SCP mit einer endgültigen C-GET RSP ohne IOD angehängt. Damit wird das Ende der C-GET Operation signalisiert. Nur wenn alle Daten erfolgreich übertragen wurden, gilt die C-GET Operation als erfolgreich.</p>
+<p><strong>C-GET</strong></p>
+<p><img src="https://i.redd.it/61osq6spcyp51.png" alt=""></p>
+<p><strong>C-MOVE</strong></p>
+<p><img src="https://i.redd.it/vb4c20o6dyp51.png" alt=""></p>
+
+    <div class = 'post_extra'><div class = 'copy' data-share = 'Share Story' data-copied = 'Link Copied'>
+  <svg>
+    <use xlink:href="#copy"></use>
+  </svg>  
+</div>
+
+    </div>
+
+  </article>
+  <aside><h3>More from DICOM Tutorial</h3>
+<ul class='posts aside'>
+<li class = 'post_item'>
+  <a class = 'post_card' href='https://dicomtutorial.github.io/HFMTS/7/12/' title = 'Serviceklassen' style = 'background-image: url(https://dicomtutorial.github.io/HFMTS/images/Serviceklassen.png);'>
+  </a>
+  <div class = 'excerpt'>
+    <div class = 'excerpt_meta'><div class = 'copy' data-share = 'Share Story' data-copied = 'Link Copied'>
+  <svg>
+    <use xlink:href="#copy"></use>
+  </svg>  
+</div>
+
+    </div>
+    <h3 class = 'post_link'>
+      <a href='https://dicomtutorial.github.io/HFMTS/7/12/'>Serviceklassen</a>
+    </h3>
+    <p class = 'pale'>DICOM Serviceklassen Die Netzwerkdienste1 in DICOM werden als Serviceklassen2 bezeichnet. …</p>
+  </div>
+</li>
+
+<li class = 'post_item'>
+  <a class = 'post_card' href='https://dicomtutorial.github.io/HFMTS/7/14/' title = 'Store' style = 'background-image: url(https://dicomtutorial.github.io/HFMTS/images/stor.jpg);'>
+  </a>
+  <div class = 'excerpt'>
+    <div class = 'excerpt_meta'><div class = 'copy' data-share = 'Share Story' data-copied = 'Link Copied'>
+  <svg>
+    <use xlink:href="#copy"></use>
+  </svg>  
+</div>
+
+    </div>
+    <h3 class = 'post_link'>
+      <a href='https://dicomtutorial.github.io/HFMTS/7/14/'>Store</a>
+    </h3>
+    <p class = 'pale'>Dieser Dienst wird zur Speicherung von DICOM Bildern verwendet. Er zählt zu den …</p>
+  </div>
+</li>
+
+</ul>
+
+  </aside>
+</div>
+<script src = 'https://dicomtutorial.github.io/HFMTS/js/autosize.min.js'></script>
+<script src = 'https://dicomtutorial.github.io/HFMTS/js/timeago.js'></script>
+    </main><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 699.428 699.428" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M502.714 0H240.428C194.178 0 153 42.425 153 87.429l-25.267.59c-46.228 0-84.019 41.834-84.019 86.838V612c0 45.004 41.179 87.428 87.429 87.428H459c46.249 0 87.428-42.424 87.428-87.428h21.857c46.25 0 87.429-42.424 87.429-87.428v-349.19zM459 655.715H131.143c-22.95 0-43.714-21.441-43.714-43.715V174.857c0-22.272 18.688-42.993 41.638-42.993l23.933-.721v393.429C153 569.576 194.178 612 240.428 612h262.286c0 22.273-20.765 43.715-43.714 43.715zm153-131.143c0 22.271-20.765 43.713-43.715 43.713H240.428c-22.95 0-43.714-21.441-43.714-43.713V87.429c0-22.272 20.764-43.714 43.714-43.714H459c-.351 50.337 0 87.975 0 87.975 0 45.419 40.872 86.882 87.428 86.882H612zm-65.572-349.715c-23.277 0-43.714-42.293-43.714-64.981V44.348L612 174.857zm-43.714 131.537H306c-12.065 0-21.857 9.77-21.857 21.835s9.792 21.835 21.857 21.835h196.714c12.065 0 21.857-9.771 21.857-21.835 0-12.065-9.792-21.835-21.857-21.835zm0 109.176H306c-12.065 0-21.857 9.77-21.857 21.834 0 12.066 9.792 21.836 21.857 21.836h196.714c12.065 0 21.857-9.77 21.857-21.836 0-12.064-9.792-21.834-21.857-21.834z"
+    ></path>
+  </symbol>
+  <symbol viewBox="0 0 60.015 60.015" xmlns="http://www.w3.org/2000/svg" id="reply">
+    <path d="M42.007 0h-24c-9.925 0-18 8.075-18 18v14c0 9.59 7.538 17.452 17 17.973v8.344a1.694 1.694 0 0 0 1.699 1.698c.44 0 .873-.173 1.198-.498l1.876-1.876C26.708 52.713 33.259 50 40.227 50h1.78c9.925 0 18-8.075 18-18V18c0-9.925-8.075-18-18-18zm16 32c0 8.822-7.178 16-16 16h-1.78c-7.502 0-14.556 2.921-19.86 8.226l-1.359 1.359V44a1 1 0 1 0-2 0v3.949c-8.356-.52-15-7.465-15-15.949V18c0-8.822 7.178-16 16-16h24c8.822 0 16 7.178 16 16v14z"></path>
+  </symbol>
+</svg>
+<footer class = 'footer'>
+  <div class = 'footer_inner wrap pale'>
+    <p>&copy;&nbsp;<span class = 'year'></span>&nbsp;DICOM Tutorial.
+    Designed by  <a href = '<no value>' title = 'Linkedin Profile'><no value></a></p>
+  </div>
+</footer>
+<script src = 'https://dicomtutorial.github.io/HFMTS/js/index.min.23bdd5f8246eb7a7d5708cf3832269ae09c346374e9684d8a2630e8ec065aa549f3b7f40002003ebba2ba85b842b08550068d7cd7ae5568d539ac37e3e67b22f.js'></script>
+
+  </body>
+</html>

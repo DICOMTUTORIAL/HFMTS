@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1s on DICOM Tutorial</title>
+    <link>https://dicomtutorial.github.io/HFMTS/1/</link>
+    <description>Recent content in 1s on DICOM Tutorial</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 23 Aug 2020 20:11:52 +0200</lastBuildDate>
+    
+	<atom:link href="https://dicomtutorial.github.io/HFMTS/1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Was ist DICOM</title>
+      <link>https://dicomtutorial.github.io/HFMTS/1/8/</link>
+      <pubDate>Sun, 23 Aug 2020 20:11:52 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/1/8/</guid>
+      <description>DICOM steht für Digital Imaging and Communication in Medicine. In Deutsch heisst das, digitale Bildgebung und Kommunikation in Medizin. DICOM ist ein offener und weltweit anerkannter Standard für die medizinische Bildgebung. Er wurde entwickelt von der ACR und der NEMA zu Beginn der 80er Jahre und ist bis heute noch im Einsatz. Aktuell ist der Standard in der dritten Fassung veröffentlicht.
+Der Zweck der Entwicklung war eine Vereinheitlichung der Bildformate von medizinisch bildgebenden Systemen.</description>
+    </item>
+    
+    <item>
+      <title>Bildgebende Verfahren</title>
+      <link>https://dicomtutorial.github.io/HFMTS/1/9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/1/9/</guid>
+      <description>Zitat von Wikipedia unter dem Suchbegriff; Bildgebendes Verfahren.
+&amp;ldquo;Ein bildgebendes Verfahren erzeugt aus Messgrößen eines realen Objektes ein Abbild, wobei die Messgröße oder eine daraus abgeleitete Information ortsaufgelöst und über Helligkeitswerte oder Farben kodiert visualisiert wird.&amp;rdquo;
+Unter dem Begriff versteht man eine Zusammenfassung von verschiedenen apparativen Untersuchungsmethoden in der medizinischen Diagnostik. Die wichtigsten Verfahren sind röntgen und -nukleardiagnostik, Endoskopie, Ultraschall, Magnetresonanz, Computertomographie.
+Sie werden hauptsächlich bei krankheitsbedingten Veränderungen im Körper eingesetzt und liefern damit wertvolle Informationen sowohl 2-Dimensional als auch 3-Dimensional zur Diagnose.</description>
+    </item>
+    
+    <item>
+      <title>Datenstruktur</title>
+      <link>https://dicomtutorial.github.io/HFMTS/1/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/1/11/</guid>
+      <description>DICOM Datenformat DICOM Datenstruktur Die Datenstruktur in DICOM ist hierarchisch aufgebaut.
+Bildquelle
+Sie beginnt mit dem Patienten als Wurzel, welcher eine beliebige Anzahl Studien haben kann. In jeder Studie können mehrere Bilder/Instanzen von unterschiedlichen Modalitäten enthalten sein.
+Bildquelle
+ Bildquelle
+Data Dictionary Das DICOM Daten Wörterbuch ist im Wesentlichen ein Register aller in der Medizin verwendeten Standarddatenelemente, also Attribute. Diese Elemente oder Items, werden in die 28 VRs formatiert.
+Damit sie in einer Liste mit über 2000 verschiedenen Elementen zuordnungsbar sind, werden sämtliche Elemente in nummerierte Gruppen unterteilt, basierend auf Ähnlichkeiten in Bezug auf deren Inhalt.</description>
+    </item>
+    
+    <item>
+      <title>PACS</title>
+      <link>https://dicomtutorial.github.io/HFMTS/1/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/1/10/</guid>
+      <description>PACS Der Begriff steht für Picture Archiving and Communication System, was Bildarchivie-rungs- und Kommunikationssystem bedeutet. Wie der Name schon sagt, handelt es sich hierbei um die Archivierung und Kommunikation von Bilddaten. Damit dies überhaupt möglich ist, wird eine einheitliche Kommunikation benötigt. Diesen Bereich regelt eben-falls DICOM.
+Jedes PACS heutzutage ist auf DICOM aufgebaut um die Interoperabilität zwischen ver-schiedenen Herstellern von Geräten und Software (Server, Viewer) zu gewährleisten. DICOM ist auch massgebend am Erfolg, und demzufolge am Wachstum von PACS-Systemen beteiligt.</description>
+    </item>
+    
+  </channel>
+</rss>

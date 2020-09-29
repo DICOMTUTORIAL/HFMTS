@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>Store | DICOM Tutorial</title>
+  <meta charset='utf-8'>
+  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <meta http-equiv = 'X-UA-Compatible' content = 'IE=edge'>
+<meta property = 'og:locale' content = 'en_US' />
+<meta property="og:type" content="article">
+<meta property = 'og:title' content = 'Store' />
+<meta name="description" content="Dieser Dienst wird zur Speicherung von DICOM Bildern verwendet. Er zählt zu den grundlegenden Eigenschaften des DICOM Netzwerkdienstes und kommt dementspechend …">
+<meta property = 'og:description' content = 'Dieser Dienst wird zur Speicherung von DICOM Bildern verwendet. Er zählt zu den grundlegenden Eigenschaften des DICOM Netzwerkdienstes und kommt dementspechend …'>
+<meta property = 'og:url' content = 'https://dicomtutorial.github.io/HFMTS/7/14/' />
+<meta property = 'og:image' content = 'https://dicomtutorial.github.io/HFMTS/images/stor.jpg'/>
+<meta name = 'twitter:card' content = 'summary_large_image' />
+<meta name = 'twitter:creator' content = ''>
+<meta name = 'twitter:title' content = 'Store' />
+<meta property = 'twitter:description'  content = 'Dieser Dienst wird zur Speicherung von DICOM Bildern verwendet. Er zählt zu den grundlegenden Eigenschaften des DICOM Netzwerkdienstes und kommt dementspechend …'/>
+<meta name = 'twitter:image' content = 'https://dicomtutorial.github.io/HFMTS/images/stor.jpg' />
+<link rel='apple-touch-icon' sizes='180x180' href='https://dicomtutorial.github.io/HFMTS/images/icons/apple-touch-icon.png'>
+<link rel='icon' type='image/png' sizes='32x32' href='https://dicomtutorial.github.io/HFMTS/images/icons/favicon-32x32.png'>
+<link rel='icon' type='image/png' sizes='16x16' href='https://dicomtutorial.github.io/HFMTS/images/icons/favicon-16x16.png'>
+<link rel='manifest' href='https://dicomtutorial.github.io/HFMTS/images/icons/site.webmanifest'>
+
+  <link rel='canonical' href='https://dicomtutorial.github.io/HFMTS/7/14/'>
+  <link rel = 'stylesheet' href = 'https://dicomtutorial.github.io/HFMTS/css/styles.7b162d036dd76ef4726c6c03a3294e879884501dfb317af089dfa8c8e903e38015760e7fd3305ff65be5c2166235408630ded1089d647962764c42094cf15835.css' integrity = 'sha512-exYtA23XbvRybGwDoylOh5iEUB37MXrwid&#43;oyOkD44AVdg5/0zBf9lvlwhZiNUCGMN7RCJ1keWJ2TEIJTPFYNQ=='>
+</head>
+
+  <body><div class = 'nav-drop'>
+  <div class = 'nav-body'>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'>Tutorial</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/1/' class = 'nav_item'>Einführung</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/3/' class = 'nav_item'>DICOM Netzwerk</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/5/' class = 'nav_item'>Vorbereitung</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/7/' class = 'nav_item'>Serviceklassen</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+    <div class = 'nav-close'></div>
+  </div>
+</div><header class = 'nav' >
+  <nav class = 'nav-menu'>
+    <a href='https://dicomtutorial.github.io/HFMTS/' class = 'nav-brand nav_item'>DICOM Tutorial</a>
+    <div class = 'nav_bar-wrap'>
+      <div class = 'nav_bar'></div>
+    </div>
+  </nav>
+</header>
+
+
+    <main>
+<section class = 'post_header' style = 'background-image:url(https://dicomtutorial.github.io/HFMTS/images/stor.jpg);'>
+  <h1 class='post_title'>Store</h1>
+</section>
+<div class = 'post'>
+  <article class='post_content'><p>Dieser Dienst wird zur Speicherung von DICOM Bildern verwendet. Er zählt zu den grundlegenden Eigenschaften des DICOM Netzwerkdienstes und kommt dementspechend auch häufig zum Einsatz. Nach jeder abgeschlossenden Studie eines Patienten werden die Bilder mit dem DIMSE C-Store an ein Archiv versendet. Zur Speicherung in einer Datenbank/Langzeitarchiv. Die Workstations speichern die abgerufenen Bilder auch ab, jedoch werden diese mit einem andern DIMSE Befehl angefordert. Der Store Netzwerkdienst kann als züsätlicher Teil in anderen Serviceklassen enthalten sein.</p>
+<p>Im folgenden wird auf der Workstation aufgezeigt, was damit gemeint ist. Dazu wird jeweils dasselbe auf dem RPi gezeigt mit einer Anleitung dazu.</p>
+<hr>
+<h1 id="tutorial">Tutorial</h1>
+<hr>
+<h3 id="pc">PC</h3>
+<ol>
+<li>Nach dem öffnen des Orthanc Explorers im Webbrowser wählt man eine Studie aus.
+<img src="https://i.redd.it/eedj5dx5yxp51.png" alt=""></li>
+<li>Auf der linken Seite ist ein Bedienfeld mit dem Namen <strong>Send to DICOM Modality</strong>.</li>
+<li>Danach wählt man die gewünschte Modalität aus.
+<img src="https://i.redd.it/wyaiua34xxp51.png" alt="Store Orthanc"></li>
+</ol>
+<hr>
+<h3 id="workstation">Workstation</h3>
+<p>Mit dem Sante PACS Server lassen sich ebenfalls DICOM Bilder versenden.</p>
+<ol>
+<li>
+<p>Nach dem man einen Patienten angewählt hat, kann der Balken <code>Send to C-Store</code> angewählt werden.</p>
+</li>
+<li>
+<p>Es erscheint ein neues Fenster, indem man den C-STORE SCP wählen kann.</p>
+<p><img src="https://i.redd.it/pxet3k1ntym51.png" alt=""></p>
+</li>
+<li>
+<p>Nach dem senden kann mit dem Öffnen des <code>Network Report SCU</code> der Verlauf kontrolliert werden im <code>Network Report</code>.</p>
+</li>
+<li>
+<p>Dazu macht man einen Doppelklick auf den ausgeführten Service Report und der <code>Network Service Log</code> erscheint.</p>
+</li>
+</ol>
+<p>Hier ist es wie mit dem Raspberry Pi und der <code>debug option</code> möglich, die gesendeten Informationen auszulesen.
+<img src="https://i.redd.it/mezaw4ofsym51.png" alt=""></p>
+<hr>
+<h3 id="rpi">RPi</h3>
+<ol>
+<li>Sobald die Verbindung mit dem RPi steht, kann folgender Befehl in die Konsole eingegeben werden.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">storescu 192.168.1.20 4444 asdf.dcm
+</code></pre></div></li>
+<li>Mit dem verbose mode (-v) lassen sich zusätliche Infos anzeigen
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">storescu 192.168.1.20 4444 asdf.dcm -v
+</code></pre></div></li>
+<li>Wenn anstelle von verbose der debug mode (-d) aktiviert wird, erhält man eine ausführliche Liste der Übertragung.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">storescu 192.168.1.20 4444 asdf.dcm -d
+</code></pre></div></li>
+</ol>
+<h4 id="association-request">Association Request</h4>
+<p><img src="https://i.redd.it/gj1r2hz6sxp51.png" alt=""></p>
+<hr>
+<p><img src="https://i.redd.it/cq5m766jsxp51.png" alt=""></p>
+<hr>
+<h4 id="association-acknowledge">Association Acknowledge</h4>
+<p><img src="https://i.redd.it/ajad5q2hrxp51.png" alt=""></p>
+<h4 id="dimse-message">DIMSE Message</h4>
+<p><img src="https://i.redd.it/f3wkg3d3rxp51.png" alt=""></p>
+
+    <div class = 'post_extra'><div class = 'copy' data-share = 'Share Story' data-copied = 'Link Copied'>
+  <svg>
+    <use xlink:href="#copy"></use>
+  </svg>  
+</div>
+
+    </div>
+
+  </article>
+  <aside><h3>More from DICOM Tutorial</h3>
+<ul class='posts aside'>
+<li class = 'post_item'>
+  <a class = 'post_card' href='https://dicomtutorial.github.io/HFMTS/7/12/' title = 'Serviceklassen' style = 'background-image: url(https://dicomtutorial.github.io/HFMTS/images/Serviceklassen.png);'>
+  </a>
+  <div class = 'excerpt'>
+    <div class = 'excerpt_meta'><div class = 'copy' data-share = 'Share Story' data-copied = 'Link Copied'>
+  <svg>
+    <use xlink:href="#copy"></use>
+  </svg>  
+</div>
+
+    </div>
+    <h3 class = 'post_link'>
+      <a href='https://dicomtutorial.github.io/HFMTS/7/12/'>Serviceklassen</a>
+    </h3>
+    <p class = 'pale'>DICOM Serviceklassen Die Netzwerkdienste1 in DICOM werden als Serviceklassen2 bezeichnet. …</p>
+  </div>
+</li>
+
+<li class = 'post_item'>
+  <a class = 'post_card' href='https://dicomtutorial.github.io/HFMTS/7/15/' title = 'Query/Retrieve' style = 'background-image: url(https://dicomtutorial.github.io/HFMTS/images/qr.jpg);'>
+  </a>
+  <div class = 'excerpt'>
+    <div class = 'excerpt_meta'><div class = 'copy' data-share = 'Share Story' data-copied = 'Link Copied'>
+  <svg>
+    <use xlink:href="#copy"></use>
+  </svg>  
+</div>
+
+    </div>
+    <h3 class = 'post_link'>
+      <a href='https://dicomtutorial.github.io/HFMTS/7/15/'>Query/Retrieve</a>
+    </h3>
+    <p class = 'pale'>Query Bei einem Query wird ein C-FIND DIMSE verwendet, welches die Suchattribute im …</p>
+  </div>
+</li>
+
+</ul>
+
+  </aside>
+</div>
+<script src = 'https://dicomtutorial.github.io/HFMTS/js/autosize.min.js'></script>
+<script src = 'https://dicomtutorial.github.io/HFMTS/js/timeago.js'></script>
+    </main><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 699.428 699.428" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M502.714 0H240.428C194.178 0 153 42.425 153 87.429l-25.267.59c-46.228 0-84.019 41.834-84.019 86.838V612c0 45.004 41.179 87.428 87.429 87.428H459c46.249 0 87.428-42.424 87.428-87.428h21.857c46.25 0 87.429-42.424 87.429-87.428v-349.19zM459 655.715H131.143c-22.95 0-43.714-21.441-43.714-43.715V174.857c0-22.272 18.688-42.993 41.638-42.993l23.933-.721v393.429C153 569.576 194.178 612 240.428 612h262.286c0 22.273-20.765 43.715-43.714 43.715zm153-131.143c0 22.271-20.765 43.713-43.715 43.713H240.428c-22.95 0-43.714-21.441-43.714-43.713V87.429c0-22.272 20.764-43.714 43.714-43.714H459c-.351 50.337 0 87.975 0 87.975 0 45.419 40.872 86.882 87.428 86.882H612zm-65.572-349.715c-23.277 0-43.714-42.293-43.714-64.981V44.348L612 174.857zm-43.714 131.537H306c-12.065 0-21.857 9.77-21.857 21.835s9.792 21.835 21.857 21.835h196.714c12.065 0 21.857-9.771 21.857-21.835 0-12.065-9.792-21.835-21.857-21.835zm0 109.176H306c-12.065 0-21.857 9.77-21.857 21.834 0 12.066 9.792 21.836 21.857 21.836h196.714c12.065 0 21.857-9.77 21.857-21.836 0-12.064-9.792-21.834-21.857-21.834z"
+    ></path>
+  </symbol>
+  <symbol viewBox="0 0 60.015 60.015" xmlns="http://www.w3.org/2000/svg" id="reply">
+    <path d="M42.007 0h-24c-9.925 0-18 8.075-18 18v14c0 9.59 7.538 17.452 17 17.973v8.344a1.694 1.694 0 0 0 1.699 1.698c.44 0 .873-.173 1.198-.498l1.876-1.876C26.708 52.713 33.259 50 40.227 50h1.78c9.925 0 18-8.075 18-18V18c0-9.925-8.075-18-18-18zm16 32c0 8.822-7.178 16-16 16h-1.78c-7.502 0-14.556 2.921-19.86 8.226l-1.359 1.359V44a1 1 0 1 0-2 0v3.949c-8.356-.52-15-7.465-15-15.949V18c0-8.822 7.178-16 16-16h24c8.822 0 16 7.178 16 16v14z"></path>
+  </symbol>
+</svg>
+<footer class = 'footer'>
+  <div class = 'footer_inner wrap pale'>
+    <p>&copy;&nbsp;<span class = 'year'></span>&nbsp;DICOM Tutorial.
+    Designed by  <a href = '<no value>' title = 'Linkedin Profile'><no value></a></p>
+  </div>
+</footer>
+<script src = 'https://dicomtutorial.github.io/HFMTS/js/index.min.23bdd5f8246eb7a7d5708cf3832269ae09c346374e9684d8a2630e8ec065aa549f3b7f40002003ebba2ba85b842b08550068d7cd7ae5568d539ac37e3e67b22f.js'></script>
+
+  </body>
+</html>

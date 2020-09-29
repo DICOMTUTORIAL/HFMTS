@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang='en'><head>
+  <title>Datenstruktur | DICOM Tutorial</title>
+  <meta charset='utf-8'>
+  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <meta http-equiv = 'X-UA-Compatible' content = 'IE=edge'>
+<meta property = 'og:locale' content = 'en_US' />
+<meta property="og:type" content="article">
+<meta property = 'og:title' content = 'Datenstruktur' />
+<meta name="description" content="DICOM Datenformat DICOM Datenstruktur Die Datenstruktur in DICOM ist hierarchisch aufgebaut.
+Bildquelle
+Sie beginnt mit dem Patienten als Wurzel, welcher eine …">
+<meta property = 'og:description' content = 'DICOM Datenformat DICOM Datenstruktur Die Datenstruktur in DICOM ist hierarchisch aufgebaut.
+Bildquelle
+Sie beginnt mit dem Patienten als Wurzel, welcher eine …'>
+<meta property = 'og:url' content = 'https://dicomtutorial.github.io/HFMTS/1/11/' />
+<meta property = 'og:image' content = 'https://dicomtutorial.github.io/HFMTS/images/11.jpg'/>
+<meta name = 'twitter:card' content = 'summary_large_image' />
+<meta name = 'twitter:creator' content = ''>
+<meta name = 'twitter:title' content = 'Datenstruktur' />
+<meta property = 'twitter:description'  content = 'DICOM Datenformat DICOM Datenstruktur Die Datenstruktur in DICOM ist hierarchisch aufgebaut.
+Bildquelle
+Sie beginnt mit dem Patienten als Wurzel, welcher eine …'/>
+<meta name = 'twitter:image' content = 'https://dicomtutorial.github.io/HFMTS/images/11.jpg' />
+<link rel='apple-touch-icon' sizes='180x180' href='https://dicomtutorial.github.io/HFMTS/images/icons/apple-touch-icon.png'>
+<link rel='icon' type='image/png' sizes='32x32' href='https://dicomtutorial.github.io/HFMTS/images/icons/favicon-32x32.png'>
+<link rel='icon' type='image/png' sizes='16x16' href='https://dicomtutorial.github.io/HFMTS/images/icons/favicon-16x16.png'>
+<link rel='manifest' href='https://dicomtutorial.github.io/HFMTS/images/icons/site.webmanifest'>
+
+  <link rel='canonical' href='https://dicomtutorial.github.io/HFMTS/1/11/'>
+  <link rel = 'stylesheet' href = 'https://dicomtutorial.github.io/HFMTS/css/styles.7b162d036dd76ef4726c6c03a3294e879884501dfb317af089dfa8c8e903e38015760e7fd3305ff65be5c2166235408630ded1089d647962764c42094cf15835.css' integrity = 'sha512-exYtA23XbvRybGwDoylOh5iEUB37MXrwid&#43;oyOkD44AVdg5/0zBf9lvlwhZiNUCGMN7RCJ1keWJ2TEIJTPFYNQ=='>
+</head>
+
+  <body><div class = 'nav-drop'>
+  <div class = 'nav-body'>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'>Tutorial</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/1/' class = 'nav_item'>Einführung</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/3/' class = 'nav_item'>DICOM Netzwerk</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/5/' class = 'nav_item'>Vorbereitung</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/7/' class = 'nav_item'>Serviceklassen</a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+      <a href = 'https://dicomtutorial.github.io/HFMTS/' class = 'nav_item'></a>
+    <div class = 'nav-close'></div>
+  </div>
+</div><header class = 'nav' >
+  <nav class = 'nav-menu'>
+    <a href='https://dicomtutorial.github.io/HFMTS/' class = 'nav-brand nav_item'>DICOM Tutorial</a>
+    <div class = 'nav_bar-wrap'>
+      <div class = 'nav_bar'></div>
+    </div>
+  </nav>
+</header>
+
+
+    <main>
+<section class = 'post_header' style = 'background-image:url(https://dicomtutorial.github.io/HFMTS/images/11.jpg);'>
+  <h1 class='post_title'>Datenstruktur</h1>
+</section>
+<div class = 'post'>
+  <article class='post_content'><h1 id="dicom-datenformat">DICOM Datenformat</h1>
+<p><img src="https://i.redd.it/e5av6ahs45q51.png" alt=""></p>
+<p><img src="https://i.redd.it/lkz3m7oa9rp51.png" alt=""></p>
+<h1 id="dicom-datenstruktur">DICOM Datenstruktur</h1>
+<p>Die Datenstruktur in DICOM ist hierarchisch aufgebaut.</p>
+<p><img src="https://i.redd.it/1khfzn1e3qp51.png" alt="Hierarchie">
+<a href="http://dicom.nema.org/dicom/2013/output/chtml/part04/sect_C.6.html#figure_C.6-1">Bildquelle</a></p>
+<p>Sie beginnt mit dem Patienten als Wurzel, welcher eine beliebige Anzahl Studien haben kann. In jeder Studie können mehrere Bilder/Instanzen von unterschiedlichen Modalitäten enthalten sein.</p>
+<p><img src="https://preview.redd.it/90ppj6au2qp51.png?width=705&amp;format=png&amp;auto=webp&amp;s=e554b01e05a5ae223e46eea3f639cff5e2610280" alt="Beispiel"></p>
+<p><a href="https://userpages.uni-koblenz.de/~cg/ws1213/medvis/vorlesung/MedVis_Vorlesung4_20121121_ohneMasterprojekte.pdf">Bildquelle</a></p>
+<hr>
+<p><img src="https://i.redd.it/0llilfxe7rp51.gif" alt=""></p>
+<p><a href="https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-3-642-10850-1_2/MediaObjects/978-3-642-10850-1_2_Fig1_HTML.gif">Bildquelle</a></p>
+<h3 id="data-dictionary">Data Dictionary</h3>
+<p>Das DICOM Daten Wörterbuch ist im Wesentlichen ein Register aller in der Medizin verwendeten Standarddatenelemente, also Attribute. Diese Elemente oder Items, werden in die 28 VRs formatiert.</p>
+<p>Damit sie in einer Liste mit über 2000 verschiedenen Elementen zuordnungsbar sind, werden sämtliche Elemente in nummerierte Gruppen unterteilt, basierend auf Ähnlichkeiten in Bezug auf deren Inhalt.</p>
+<p>Da jede Gruppe nach Elementen organisiert ist, wird jedes Element mit einer eigenen Nummer (Gruppe/Element) bezeichnet, dem sogenannten &ldquo;Tag&rdquo;. Diese Bezeichnung wird in Hexadezimalzahlen angegeben.</p>
+<p>Das Datenelement «Patientenname» kann durch den Tag (0010,0010) oder den Attributnamen referenziert werden. Dies ist in DICOM von besonderer Bedeutung, da DICOM Anwendungen mit «Tags» auf die Dateielemente verweisen. Sie sind kürzer, besitzen eine feste Grösse und folgen einem hexadezimalen, computerfreundlichen Format.</p>
+<blockquote>
+<p>Für diese Elemente existieren mehrere Bezeichnungen wie etwa «Attribute», «DICOM Datenelemente» oder einfach «DICOM Elemente».</p>
+</blockquote>
+<p>Wie vorgängig erwähnt, sagt die VR aus, in welchem Datenformat eine Information aus der realen Welt in die digitale gelangt. Die Value Multiplicity (VM) definiert hingegen, ob das zugehörige Element nur ein oder mehrere Werte seines Typs enthalten darf. Bei-spielsweise kann das Element (0010,1001) «Andere Patientennamen» durchaus mehr als einen Namen enthalten. Diese Multiplizität wird als «1-n» angegeben und n entspricht dabei einer beliebigen Anzahl. 
+<a href="https://www.springer.com/gp/book/9783642108495">Quelle</a></p>
+<hr>
+<h3 id="daten-element">Daten Element</h3>
+<p><img src="https://i.redd.it/x3zzz7r1jqp51.png" alt="">
+<a href="http://dicom.nema.org/dicom/2013/output/chtml/part05/chapter_7.html#figure_7.1-1">Bildquelle</a></p>
+<p><img src="https://i.redd.it/rz0bf0bvlqp51.png" alt="">
+<a href="http://dicom.nema.org/dicom/2013/output/chtml/part05/chapter_7.html#table_7.1-1">Tabellenquelle</a></p>
+<p>Tabelle von DICOM Daten Elementen.
+<a href="http://dicom.nema.org/medical/dicom/current/output/html/part06.html#chapter_6">DICOM Daten Element Register</a></p>
+<h3 id="unique-identifier-definition---uid">Unique Identifier Definition - UID</h3>
+<p><img src="https://i.redd.it/zuomikwdbqp51.png" alt="Verification UID"></p>
+<p>Die UID wird zur eindeutigen Identifikation für ein Vielzahl von Elementen eingesetzt, wie in der Tabelle oben. <br>
+Damit wird die Einzigartigkeit in verschiedenen Ländern, Standorten und Anbietern von Systemen gewährleistet.</p>
+<p>Verschiedene Klassen von Objekten, Instanzen von Objekten und Informations Entity IE lassen sich damit im gesamten DICOM Universum voneinander unterscheiden.</p>
+<p>Die UID in DICOM basiert auf der OSI-Objektidentifikation (numerische Form) gemäss der Norm ISO 8824.</p>
+<p>Jede von DICOM verwendete UID ist gemäss ISO 9834-1 definiert, um die globale Eindeutigkeit sicher zu stellen.
+<a href="http://dicom.nema.org/dicom/2013/output/chtml/part05/chapter_9.html----UID">Quelle</a></p>
+<p>Unter folgendem Link findet ihr die Tabelle von den in DICOM verwendeten UIDs. <a href="http://dicom.nema.org/medical/dicom/current/output/html/part06.html#chapter_A">UID Tabelle</a></p>
+<hr>
+<h3 id="value-representation---vr">Value Representation - VR</h3>
+<p>Im 5. Teil  des DICOM Standards werden 28 grundlegende Datentypen (Format) definiert, mit welchen alle möglichen klinischen Daten erfasst werden. Das bedeutet, dass alles was in DICOM geschrieben  wird, mit einem dieser 28 VRs übereinstimmen muss.</p>
+<p>Jede VR wird beschrieben mit einem abgekürzten Namen aus zwei Buchstaben, einer Definition der jeweiligen VR, einer Beschreibung der zulässigen Zeichen im  jeweiligen Datentyp und der vorgeschriebenen Datenlänge. Die Datenlänge oder auch „VR length“ genannt in DICOM, definiert die Datengrösse der DICOM Datentypen. Sie ist ein wesentlicher Bestandteil der VR und für die Entwicklung und Kompatibilität von DICOM Anwendungen von grosser Bedeutung.</p>
+<p>Es lässt sich zusammenfassend sagen, dass die VRs die wichtigste Rolle in der DICOM Dateistrukturierung spielen. Sie sind die Wortformen die DICOM versteht sowie spricht und verbinden damit die reale Welt mit DICOM.
+<a href="https://www.springer.com/gp/book/9783642108495">Quelle</a></p>
+<p>Unter folgendem Link gelangt man zur Tabelle aller VRs in DICOM.</p>
+<p><a href="http://dicom.nema.org/dicom/2013/output/chtml/part05/sect_6.2.html">VR Tabelle</a></p>
+<p><strong>Beispiele</strong></p>
+<p><strong>PN VR</strong>
+Der gesamte Personenname (PN) in DICOM wird unter einem eigenen VR  abgespeichert. Speziell bei den Namen und deren Reihenfolge können leicht Verwirrung entstehen. Daher gibt der DICOM Standard die Reihenfolge folgend vor: Familienname – Personenname – Mittlerer Name – usw.</p>
+<p><strong>UID VR</strong>
+Die UID VR ist eine eindeutige Kodierung von Instanzen bestimmter DICOM Objekte (Daten). Während AE nur lokal wie innerhalb eines Netzwerks eindeutig identifizierbar sind, müssen DICOM UIDs es global sein. So wird beispielsweise bei einer Kopie einer Studie eine neue UID vergeben um Verwechslungen nach Bearbeitung der Studien zu vermeiden.</p>
+<p><strong>AE VR</strong>
+Die DICOM AE VR repräsentiert die DICOM Application Entity oder anderst gesagt, eine DICOM Anwendungseinheit. Das kann ein DICOM Gerät oder Software sein und dient zur eindeutigen Identifikation in einem Netzwerk mittels dem AE – Title, oder einfach dem Titel (Name), der dem Gerät oder Software zugewiesen wurde. Es können keine identischen AE Titel in einem Netzwerk existieren, was diese VR zu einer der wichtigsten für DICOM Netzwerke und PACS macht.</p>
+<blockquote>
+<p>Hier gilt es, die Wichtigkeit von der Wahl des Titels zu erwähnen. Gemeint ist damit, dass auf die Wahl eines Titels mit Gross und Kleinschreibung verzichtet werden soll. Damit lassen sich unnötige Kommunikationsprobleme vermeiden, da dies bei einigen DICOM Geräten zu Problemen führt.</p>
+</blockquote>
+<p><strong>Zahlen in Binär VRs</strong>
+Es handelt sich hierbei um die gleichen Zahlen wie bei (IS) und (DS) die jedoch binär abgespeichert werden. Signed Short (SS), Unsigned Short (US), Signed Long (SL), Unsigned Long (UL), Floating Point Single (FL) und Floating Point Double (FD) werden verwendet um einzelne Zahlen darzustellen. Other Byte String (OB), Other Word String (OW) und Other Floating String (OF) werden für lange numerische Zeichenketten verwendet. Mit dem Attribute Tag (AT) werden ausschliesslich DICOM Attribute beschrieben. Dieser Datentyp kennzeichnet jedes Attribut mit einem Gruppen- und Element Tag. Darauf wird später noch näher eingegangen.</p>
+<p><strong>Zahlen in Text VRs</strong>
+Um nummerische Werte als Textzeichenfolge abzuspeichern, werden die Datentypen Integer String (IS) und Decimal String (DS) verwendet. Trotz der schlechteren Eignung als Binäre Daten im Vergleich, sind die textformatierten Zahlen in DICOM häufig anzutreffen. Einerseits weil sie leicht leserlich sind und daher auf vielen Oberflächen angezeigt werden können, anderseits weil sie unabhängig von Little und Big Endian Bytereihenfolgen sind.</p>
+<p><strong>Datum &amp; Zeit VRs</strong>
+In DICOM gibt es ganze 4 VRs um die Zeit und das Datum in einem String, also Text, zu speichern. Date (DA), Time (TM), Date Time (DT) und Age String (AS). Wichtig hierbei ist vor allem die Reihenfolge der einzelnen Angaben wichtig. Diese hat in HHMMSS zu erfolgen und wäre beispielsweise für 18:30:00 in DICOM als 183000 geschrieben.</p>
+<p>Die Anzahl der VRs für Datum &amp; Zeit ist ein Beispiel dafür wie vielfältig DICOM aufgebaut ist und zum Teil auch eher unnötige Aufteilungen beinhalten kann. 
+<a href="https://www.springer.com/gp/book/9783642108495">Quelle</a></p>
+<hr>
+<p><img src="https://media.springernature.com/lw785/springer-static/image/chp%3A10.1007%2F978-3-642-10850-1_5/MediaObjects/978-3-642-10850-1_5_Fig14_HTML.gif" alt=""></p>
+<p><a href="https://media.springernature.com/lw785/springer-static/image/chp%3A10.1007%2F978-3-642-10850-1_5/MediaObjects/978-3-642-10850-1_5_Fig14_HTML.gif">Bildquelle</a></p>
+<h3 id="module">Module</h3>
+<p>Module oder Informationsmodule sind die erste Ebene in der Organisation der DICOM Daten. Ihr Hauptzweck besteht darin, verwandte Attribute (Datenelemente) in eine sinn-volle Reihenfolge zu gliedern. Die richtige Auswahl eines Moduls hängt dabei von der Art der gespeicherten Daten im DICOM Objekt ab.</p>
+<p>Wenn man alle Informationen zur Identifikation eines Patienten gruppiert, ergibt sich daraus das Patienteninformationsmodul mit dem Inhalt; Patientenname, Grösse, Gewicht, etc. In diesen Informationsmodulen müssen jedoch nicht alle Werte belegt sein. Zur Kennzeichnung werden diese mit Grossbuchstaben, wie M für obligatorisch, C für bedingte und U für Benutzerdefinierte Informationsmodule, beschrieben.</p>
+<p>Es gibt beispielsweise Module für Geräte (Modalitäten), EKGs, Berichte oder Sprachaufzeichnungen. Ausserdem ist das Patientenidentifikationsmodul für Modalitäten Pflicht. Das heisst, es kann kein Bild existieren, welches nicht einem Patienten zugeordnet werden kann.</p>
+<p>In Teil 3 des DICOM Standards sind Standardmodule und Informationsobjektmodule definiert in welchen angegeben wird, welche Module für die jeweiligen Modalitäten geeignet sind.</p>
+<h3 id="informatiion-entities">Informatiion Entities</h3>
+<p>Auf der nächsten Ebene der Organisation der DICOM Daten sind die Information Entities. Nachdem die Attribute gruppiert wurden, werden diese durch Information Entities als reale Einheiten dargestellt, welche am Workflow der medizinischen Bildgebung beteiligt sind. Dabei ist eine Information Entity eine Auflistung von relevanten Modulen die darin enthalten sein sollten.</p>
+<p>So müsste beim allgemeinen Patienten IE das Patientenmodul, das Probeidentifikationsmodul und das Subjektmodul für klinische Studien enthalten sein. Oder die IE für allgemeine Studien umfasst das allgemeine Studienmodul, das Patientenstudienmodul und das klinische Studienmodul. IE’s für Bilder und Serien sind wesentlich komplexer aufgebaut, da mehr Module beteiligt sind. Anhand des DICOM Informationsmodells mit dem hierarchischen Workflow lässt sich erkennen, was damit gemeint ist. Dabei ent-sprechen die Rechtecke den IE’s.</p>
+<h3 id="iod">IOD</h3>
+<p>An der Spitze der Organisation von DICOM Daten befinden sich die IOD’s. Eine sinnvolle Kombination aus IE’s ergibt das jeweilige IOD, mit welchen, die von DICOM verwendeten Objekte definiert sind. Gemeint ist damit, dass die gesamte Datenverarbeitung über IODs läuft für DICOM Anwendungen und Modalitäten. Mit IOD’s werden die häufigsten Datentypen in der medizinischen Bildgebung erstellt, wie Bilder für die verschiedenen Modalitäten.</p>
+<p>Unterschieden werden generell zwei Arten von IOD’s. Zum einen die normalized IOD und zu anderen die composite IOD. Die normalized IOD beinhalten nur Attribute aus einer Gruppe. Das heisst eine reine Patienteninformation wäre normalized, da nur Attribute aus der Gruppe der Patientendaten enthalten sind. Weitere Beispiele wären die Studieninformation oder die Serieninformation.
+Die composite IOD beinhalten Attribute aus verschiedenen Gruppen.</p>
+<blockquote>
+<p>Bei der Klasse der CT-Bilder beispielsweise sind nicht nur Informationen zum Patienten vorhanden, sondern auch Informationen aus den Gruppen der Serie und Studie</p>
+</blockquote>
+<p>In DICOM IOD’s werden verschiedene Attribute der unterschiedlichen Gruppen zu Objektklassen zusammengefasst. Die Klasse der CT-Bilder ist ein Beispiel davon, zu welcher bestimmte Attribute angehören.</p>
+<p>CT Image IOD Modul</p>
+<p><img src="https://i.redd.it/inuiljw5sqp51.png" alt="">
+<a href="http://dicom.nema.org/dicom/2013/output/chtml/part03/sect_A.3.html#sect_A.3.1">Tabellenqduelle</a></p>
+
+    <div class = 'post_extra'><div class = 'copy' data-share = 'Share Story' data-copied = 'Link Copied'>
+  <svg>
+    <use xlink:href="#copy"></use>
+  </svg>  
+</div>
+
+    </div>
+
+  </article>
+  <aside><h3>More from DICOM Tutorial</h3>
+<ul class='posts aside'>
+<li class = 'post_item'>
+  <a class = 'post_card' href='https://dicomtutorial.github.io/HFMTS/1/8/' title = 'Was ist DICOM' style = 'background-image: url(https://dicomtutorial.github.io/HFMTS/images/Was.png);'>
+  </a>
+  <div class = 'excerpt'>
+    <div class = 'excerpt_meta'><div class = 'copy' data-share = 'Share Story' data-copied = 'Link Copied'>
+  <svg>
+    <use xlink:href="#copy"></use>
+  </svg>  
+</div>
+
+    </div>
+    <h3 class = 'post_link'>
+      <a href='https://dicomtutorial.github.io/HFMTS/1/8/'>Was ist DICOM</a>
+    </h3>
+    <p class = 'pale'>DICOM steht für Digital Imaging and Communication in Medicine. In Deutsch heisst das, …</p>
+  </div>
+</li>
+
+<li class = 'post_item'>
+  <a class = 'post_card' href='https://dicomtutorial.github.io/HFMTS/1/9/' title = 'Bildgebende Verfahren' style = 'background-image: url(https://dicomtutorial.github.io/HFMTS/images/22.jpg);'>
+  </a>
+  <div class = 'excerpt'>
+    <div class = 'excerpt_meta'><div class = 'copy' data-share = 'Share Story' data-copied = 'Link Copied'>
+  <svg>
+    <use xlink:href="#copy"></use>
+  </svg>  
+</div>
+
+    </div>
+    <h3 class = 'post_link'>
+      <a href='https://dicomtutorial.github.io/HFMTS/1/9/'>Bildgebende Verfahren</a>
+    </h3>
+    <p class = 'pale'>Zitat von Wikipedia unter dem Suchbegriff; Bildgebendes Verfahren.
+&ldquo;Ein bildgebendes …</p>
+  </div>
+</li>
+
+</ul>
+
+  </aside>
+</div>
+<script src = 'https://dicomtutorial.github.io/HFMTS/js/autosize.min.js'></script>
+<script src = 'https://dicomtutorial.github.io/HFMTS/js/timeago.js'></script>
+    </main><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 699.428 699.428" xmlns="http://www.w3.org/2000/svg" id="copy">
+    <path d="M502.714 0H240.428C194.178 0 153 42.425 153 87.429l-25.267.59c-46.228 0-84.019 41.834-84.019 86.838V612c0 45.004 41.179 87.428 87.429 87.428H459c46.249 0 87.428-42.424 87.428-87.428h21.857c46.25 0 87.429-42.424 87.429-87.428v-349.19zM459 655.715H131.143c-22.95 0-43.714-21.441-43.714-43.715V174.857c0-22.272 18.688-42.993 41.638-42.993l23.933-.721v393.429C153 569.576 194.178 612 240.428 612h262.286c0 22.273-20.765 43.715-43.714 43.715zm153-131.143c0 22.271-20.765 43.713-43.715 43.713H240.428c-22.95 0-43.714-21.441-43.714-43.713V87.429c0-22.272 20.764-43.714 43.714-43.714H459c-.351 50.337 0 87.975 0 87.975 0 45.419 40.872 86.882 87.428 86.882H612zm-65.572-349.715c-23.277 0-43.714-42.293-43.714-64.981V44.348L612 174.857zm-43.714 131.537H306c-12.065 0-21.857 9.77-21.857 21.835s9.792 21.835 21.857 21.835h196.714c12.065 0 21.857-9.771 21.857-21.835 0-12.065-9.792-21.835-21.857-21.835zm0 109.176H306c-12.065 0-21.857 9.77-21.857 21.834 0 12.066 9.792 21.836 21.857 21.836h196.714c12.065 0 21.857-9.77 21.857-21.836 0-12.064-9.792-21.834-21.857-21.834z"
+    ></path>
+  </symbol>
+  <symbol viewBox="0 0 60.015 60.015" xmlns="http://www.w3.org/2000/svg" id="reply">
+    <path d="M42.007 0h-24c-9.925 0-18 8.075-18 18v14c0 9.59 7.538 17.452 17 17.973v8.344a1.694 1.694 0 0 0 1.699 1.698c.44 0 .873-.173 1.198-.498l1.876-1.876C26.708 52.713 33.259 50 40.227 50h1.78c9.925 0 18-8.075 18-18V18c0-9.925-8.075-18-18-18zm16 32c0 8.822-7.178 16-16 16h-1.78c-7.502 0-14.556 2.921-19.86 8.226l-1.359 1.359V44a1 1 0 1 0-2 0v3.949c-8.356-.52-15-7.465-15-15.949V18c0-8.822 7.178-16 16-16h24c8.822 0 16 7.178 16 16v14z"></path>
+  </symbol>
+</svg>
+<footer class = 'footer'>
+  <div class = 'footer_inner wrap pale'>
+    <p>&copy;&nbsp;<span class = 'year'></span>&nbsp;DICOM Tutorial.
+    Designed by  <a href = '<no value>' title = 'Linkedin Profile'><no value></a></p>
+  </div>
+</footer>
+<script src = 'https://dicomtutorial.github.io/HFMTS/js/index.min.23bdd5f8246eb7a7d5708cf3832269ae09c346374e9684d8a2630e8ec065aa549f3b7f40002003ebba2ba85b842b08550068d7cd7ae5568d539ac37e3e67b22f.js'></script>
+
+  </body>
+</html>

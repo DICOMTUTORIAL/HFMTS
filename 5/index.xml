@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>5s on DICOM Tutorial</title>
+    <link>https://dicomtutorial.github.io/HFMTS/5/</link>
+    <description>Recent content in 5s on DICOM Tutorial</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 23 Aug 2020 18:42:15 +0200</lastBuildDate>
+    
+	<atom:link href="https://dicomtutorial.github.io/HFMTS/5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RPi Konfiguration</title>
+      <link>https://dicomtutorial.github.io/HFMTS/5/4/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:15 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/5/4/</guid>
+      <description>Als DICOM Server wird in diesem Tutorial die Software Orthanc dienen. Diese wird auf dem Raspberry Pi installiert, sowie auch auf dem PC. Orthanc kann als Server und als Modalität1 konfiguriert werden. Auf dem RPi wird sie als Server genutzt und auf dem PC als simulierte Modalität.
+ Installation RPi:
+  Nach Verbindung via SSH2 wird folgender Befehl eingegeben.
+sudo apt-get install orthanc   Nach erfolgreicher Installation wechseln wir das Verzeichnis, um zur Konfigurations Datei des DICOM Servers zu gelangen.</description>
+    </item>
+    
+    <item>
+      <title>DICOM Bilder</title>
+      <link>https://dicomtutorial.github.io/HFMTS/5/2/</link>
+      <pubDate>Sun, 23 Aug 2020 18:41:57 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/5/2/</guid>
+      <description>DICOM Bilder Es werden verschiedene Bilddatenbanken und Beispielbilder im Internet angeboten. Unter folgenden Links findet man verschiedenste Bilder in unterschiedlicher Qualität.
+  http://www.visus.com/en/download/free-dicom-viewer/download-page.html Tutorial https://medimodel.com/sample-dicom-files/ https://www.rubomedical.com/dicom_files/ https://www.insight-journal.org/midas/collection/view/194 Früchte &amp;amp; Gemüse https://medistim.com/dicom/ https://boxdicom.com/samples.html Grosse Sammlung   Die DICOM BIlder werden benötigt für dieses Tutorial. Sie sind die Daten welche von DICOM kodiert werden und in bytes durch das Netzwerk transferiert werden. Es gibt verschiedene bildgebende Verfahren. Daher unterscheiden sich auch die erzeugten Bilder der jeweiligen Verfahren.</description>
+    </item>
+    
+    <item>
+      <title>DICOM Viewer</title>
+      <link>https://dicomtutorial.github.io/HFMTS/5/3/</link>
+      <pubDate>Sun, 23 Aug 2020 18:41:51 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/5/3/</guid>
+      <description>Anzeige Damit sich Bilder im DICOM Format anzeigen lassen, werden DICOM Viewer vorausgesetzt. Mit diesen lassen sich nebst dem betrachten der Bilder, auch viele verschiedene Veränderungen am Bild vornehemen. Dieses Kapitel wird mit dem Programm DICOM Sante PACS behandelt, welches über einen übersichtlichen Viewer verfügt. Er bietet zudem auch einen Hexa Viewer an, mit welchem sich die einzelnen Teile eines DICOM Datenstroms aufgezeigen lassen. Der DICOM Sante PACS Server wird in einem anderen Kapitel behandelt.</description>
+    </item>
+    
+    <item>
+      <title>Vorbereitung</title>
+      <link>https://dicomtutorial.github.io/HFMTS/5/1/</link>
+      <pubDate>Sun, 23 Aug 2020 18:41:51 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/5/1/</guid>
+      <description>Überblick In diesem Tutorial wird auf einem Raspberry Pi 4 ein DICOM Server installiert &amp;amp; konfiguriert. Dazu wird auch gezeigt, wie eine Modalität angebunden wird.
+Wir verbinden uns von einem PC auf den RPi via SSH Verbindung. In diesem Fall wurde Putty verwendet.
+Der Server im Mini-PACS ist der RPi. Die Workstation und die Modalität wird mit dem PC ausgeführt. Die Workstation kann Bilder zur Betrachtung und Bearbeitung. Die Modalität wird mit dem PC simuliert.</description>
+    </item>
+    
+  </channel>
+</rss>

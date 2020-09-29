@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>7s on DICOM Tutorial</title>
+    <link>https://dicomtutorial.github.io/HFMTS/7/</link>
+    <description>Recent content in 7s on DICOM Tutorial</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 23 Aug 2020 18:42:24 +0200</lastBuildDate>
+    
+	<atom:link href="https://dicomtutorial.github.io/HFMTS/7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Serviceklassen</title>
+      <link>https://dicomtutorial.github.io/HFMTS/7/12/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:24 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/7/12/</guid>
+      <description>DICOM Serviceklassen Die Netzwerkdienste1 in DICOM werden als Serviceklassen2 bezeichnet. Diese setzen sich immer aus zwei Teilen zusammen. Zum einen gibt es die Netzwerkbefehle oder Kommandos welch als DIMSE3 bezeichnet werden. Zum anderen werden mit Befehlen Daten übermittelt. Dies geschieht mit den IODs4.
+Der DICOM Standard5 definiert eine ganze Reihe von Serviceklassen. In diesem Tutorial beschäftigen wir uns jedoch nicht mit einer grossen Anzahl davon. Doch wir werden grundlegende und bewährte Serviceklassen aus dem Alltag bildgebender Medizin betrachten.</description>
+    </item>
+    
+    <item>
+      <title>Query/Retrieve</title>
+      <link>https://dicomtutorial.github.io/HFMTS/7/15/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:15 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/7/15/</guid>
+      <description>Query Bei einem Query wird ein C-FIND DIMSE verwendet, welches die Suchattribute im dazugehörigen IOD enthält. Nach diesen Suchattributen wird auf dem SCP ein Datenabgleich ausgeführt. Füre jede Übereinstimmung sendet der C-FIND SCP die Antworten an den C-FIND SCU zurück.
+Somit dient der Query Befehl auch als Kontrolle, ob die gesuchten Daten auf einem Archiv als SCP vorhanden sind. Erst nach Bestätigung vom SCP zum SCU ist es möglich die Daten anzufordern und zu speichern.</description>
+    </item>
+    
+    <item>
+      <title>Store</title>
+      <link>https://dicomtutorial.github.io/HFMTS/7/14/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:15 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/7/14/</guid>
+      <description>Dieser Dienst wird zur Speicherung von DICOM Bildern verwendet. Er zählt zu den grundlegenden Eigenschaften des DICOM Netzwerkdienstes und kommt dementspechend auch häufig zum Einsatz. Nach jeder abgeschlossenden Studie eines Patienten werden die Bilder mit dem DIMSE C-Store an ein Archiv versendet. Zur Speicherung in einer Datenbank/Langzeitarchiv. Die Workstations speichern die abgerufenen Bilder auch ab, jedoch werden diese mit einem andern DIMSE Befehl angefordert. Der Store Netzwerkdienst kann als züsätlicher Teil in anderen Serviceklassen enthalten sein.</description>
+    </item>
+    
+    <item>
+      <title>Verification</title>
+      <link>https://dicomtutorial.github.io/HFMTS/7/13/</link>
+      <pubDate>Sun, 23 Aug 2020 18:42:15 +0200</pubDate>
+      
+      <guid>https://dicomtutorial.github.io/HFMTS/7/13/</guid>
+      <description>Die Verification Class dient der überprüfung einer DICOM Konnektivität zwischen 2 DICOM Knoten. Es wird als SCU und SCP eingesetzt. Der Verlauf beginnt mit einer C-ECHO-RQ Message vom SCU zum SCP, der wiederum mit einer C-ECHO-RSP antwortet. Damit wird sichergestellt, das diese Verbindung zwischen den DICOM Knoten richtig konfiguriert ist.
+Die Verification Class lässt sich wie folgt ausführen:
+PC  Nach der Wahl der DICOM Servers. Wird mit der Taste Test ECHO das C-ECHO SCU ausgeführt.</description>
+    </item>
+    
+  </channel>
+</rss>
